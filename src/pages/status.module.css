@@ -1,0 +1,31 @@
+.app {
+    padding-top: 2vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    /* background-color: #eeeeee; */
+    /* border-radius: 10px; */
+    display: block;
+}
+
+.title {
+    padding-top: 5px;
+    font-family: "Source Code Pro";
+    text-align: center;
+    font-size: 22px;
+}
+
+.subtitle {
+    font-family: "Rubik";
+    text-align: center;
+    font-size: 15px;
+}
+
+.logo img{
+    text-align: center;
+    width: 6vh;
+}
+
+.logo {
+    display: flex; 
+    justify-content: center; 
+}
