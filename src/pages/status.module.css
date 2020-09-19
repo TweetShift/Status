@@ -1,15 +1,27 @@
 .app {
     padding-top: 2vh;
-    margin-left: 10vh;
-    margin-right: 10vh;
     /* background-color: #eeeeee; */
     /* border-radius: 10px; */
     display: block;
 }
 
+@media only screen and (min-width: 600px) {
+    .app {
+        margin-left: 12vh;
+        margin-right: 12vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .app {
+        margin-left: 3vh;
+        margin-right: 3vh;
+    }
+}
+
 .title {
     padding-top: 5px;
-    font-family: "Source Code Pro";
+    font-family: "Rubik";
     text-align: center;
     font-size: 22px;
 }
@@ -29,3 +41,41 @@
     display: flex; 
     justify-content: center; 
 }
+
+.subheader {
+    font-family: "Rubik";
+    font-size: 19px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #666A86; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #788AA3; /* Green */
+}
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+    .logo img {
+        filter: invert(100%);
+    }
+} */

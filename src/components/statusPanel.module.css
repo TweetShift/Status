@@ -1,0 +1,31 @@
+.service {
+    /* font-family: 'Rubik'; */
+    /* font-weight: bold; */
+    text-decoration: underline;
+    font-size: 2.3vh;
+}
+
+.panel {
+    display: block;
+    /* background-color: #F4F7F5; */
+    padding: 10px;
+    border: 1px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.status {
+    display: flex;
+    height: 45px;
+}
+
+.status {
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.status img {
+    width: 45px;
+}
