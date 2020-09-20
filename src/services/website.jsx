@@ -59,7 +59,7 @@ export class Website extends React.Component {
 				this.setState({
 					loading: false,
 					icon: 'error',
-					status: 'Connection issues'
+					status: `Connection issues: The web server isn't responding.`
 				});
 				return;
 			});

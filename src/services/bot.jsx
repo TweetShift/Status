@@ -68,7 +68,7 @@ export class Bot extends React.Component {
 				this.setState({
 					loading: false,
 					icon: 'error',
-					status: 'Error'
+					status: `Sharder Unavailable: This likely means that the bot is offline.`
 				});
 				return;
 			});
