@@ -80,3 +80,8 @@ button:hover {
         filter: invert(100%);
     }
 } */
+
+.centerLoader {
+    display: flex;
+    justify-content: center;
+}
