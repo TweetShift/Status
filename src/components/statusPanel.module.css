@@ -2,7 +2,7 @@
     /* font-family: 'Rubik'; */
     /* font-weight: bold; */
     text-decoration: underline;
-    font-size: 2.3vh;
+    font-size: 18px;
 }
 
 .panel {
@@ -14,6 +14,7 @@
     border-style: solid;
     border-radius: 4px;
     margin-bottom: 10px;
+    font-family: 'Rubik';
 }
 
 .status {
