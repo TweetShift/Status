@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './status.module.css';
-import { Panel } from '../components/statusPanel';
 import { Bot } from '../services/bot';
 import MoonLoader from 'react-spinners/MoonLoader';
 import { Website } from '../services/website';
@@ -18,7 +17,7 @@ export default class Home extends React.Component {
 		return (
 			<div className={styles.app}>
 				<div className={styles.logo}>
-					<img src="/isolated.svg" />
+					<img alt="logo" src="/isolated.svg" />
 				</div>
 				<p className={styles.title}>TweetShift Status</p>
 				<p className={styles.subtitle}>Here you can check the status of our services.</p>
