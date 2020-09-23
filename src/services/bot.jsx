@@ -26,13 +26,19 @@ export class Bot extends React.Component {
 				const botShards = this.state.shards;
 				var shards = botShards.map(function(s) {
 					if (s.online) {
+						let icon = 'online'
+						let status = `Online: ${s.ping}ms`
+						if (s.ping < 0) {
+							icon = 'warning'
+							status = 'Partial outage: Gateway connection failing.'
+						}
 						return (
 							<Panel
 								key={s.id}
 								service={`Shard ${s.id}`}
 								loading={false}
-								icon={'online'}
-								status={`Online: ${s.ping}ms`}
+								icon={icon}
+								status={status}
 							/>
 						);
 					} else {
@@ -68,7 +74,7 @@ export class Bot extends React.Component {
 				this.setState({
 					loading: false,
 					icon: 'error',
-					status: `Sharder Unavailable: This likely means that the bot is offline.`
+					status: `Sharder unavailable: This likely means that the bot is offline.`
 				});
 				return;
 			});
