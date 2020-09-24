@@ -27,9 +27,7 @@ export default class Home extends React.Component {
 					<div>
 						<div className={styles.section}>
 							<p className={styles.subheader}>Core services:</p>
-							{/* <Panel service="Website" loading={false} icon="warning" status="Partial Outage" /> */}
 							<Website />
-							{/* <Panel service="Auto-Posting" loading={false} icon="offline" status="Offline" /> */}
 						</div>
 
 						<div className={styles.section}>
@@ -49,7 +47,7 @@ export default class Home extends React.Component {
 	}
 
 	refresh() {
-		// window.location.reload(false);
+		const number = Math.floor(Math.random() * 800) + 200;
 		this.setState({
 			show: false
 		});
@@ -58,7 +56,7 @@ export default class Home extends React.Component {
 				//Start the timer
 				this.setState({ show: true }); //After 1 second, set render to true
 			}.bind(this),
-			500
+			number
 		);
 	}
 
