@@ -61,7 +61,7 @@ export class Bot extends React.Component {
 
 	async componentDidMount() {
 		await axios
-			.get(`${endpoint('shards')}/api/status`)
+			.get(`${endpoint('shards')}/api/api`)
 			.then((response) => {
 				this.setState({
 					loading: false,
