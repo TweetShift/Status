@@ -24,16 +24,31 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="root">
+      <style>
+        .loadBox {
+          min-height: 100vh;
+          min-width: 100vh;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          animation: pulse 1s cubic-bezier(0.22, 1, 0.36, 1);
+          animation-fill-mode: forwards;
+          background-repeat:no-repeat;
+          background-position: center center;
+          background-size: 30vh;
+          background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OS44NTQzMjMyNDEwNTYxIDYwIiBjbGFzcz0iaWNvbiI+PCEtLS0tPjwhLS0tLT48IS0tLS0+PCEtLS0tPjxnIGRhdGEtdi00MjNiZjlhZT0iIiBpZD0iYWExOTU3MTYtODYwOS00OTAzLWJmN2UtMzViMjAyN2JhN2UyIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjc4MTE0ODkzMzUzMjczMTQsMCwwLDAuNzgxMTQ4OTMzNTMyNzMxNCwtNC4wNDc3OTA1MzQ1MTc5NzksLTMuOTI4NDQ2NjI5NzUzNjUxKSIgc3Ryb2tlPSJub25lIiBmaWxsPSJibGFjayI+PHN3aXRjaD48Zz48cGF0aCBkPSJNNDYuNjYgODEuODM5Yy02LjExIDAtMTIuMTktMS4xMDUtMTcuNTgzLTMuMTk1LTkuMzE5LTMuNTk4LTE2LjY0LTEwLjY4NS0yMC42MS0xOS45NTNhNDAuNzg3IDQwLjc4NyAwIDAgMS0yLjk4MS0xMS42OCA0LjMzNCA0LjMzNCAwIDAgMS0uMDE0LS4xNjcgMjkuODUxIDI5Ljg1MSAwIDAgMS0uMDE2LTEuMTJjLS4wMDItLjYzNi0uMDA4LTIuMjA0LS4wNjYtMi45MjRhMy42MjYgMy42MjYgMCAwIDEgNS4yMDMtNC4zNjdjMi4wMjUgMS4xNDYgNS4xMDEgMi42NjkgNy45NzQgMy43ODEtMS4yMjEtMy42OC0yLjA0NS04LjE5NC0uNjk3LTExLjk1NGEzLjYyOCAzLjYyOCAwIDAgMSA1LjM1MS0xLjg0MmMzLjk0OSAyLjQ5NiAxMS4xOCA2LjI5MiAxNS42NDcgNy4xMDRhMy4zNiAzLjM2IDAgMCAxLS4wMjUtLjI0NGMtLjIyOS0zLjM1NC0uMjIxLTYuMzU5LjAyNi05LjE4NS43OTgtOS4zNTIgNi4xNDctMTYuMzU1IDE0LjY3NC0xOS4yMDggNS41Mi0xLjg0MSAxMS41NjItMi4zNCAxNi43NzgtMS4zNzMgMi44NTUuNTM2IDUuMzUxIDEuNTM3IDcuNDIzIDIuOTc2IDEuMDY2LjczIDIuMTI1IDEuNjY0IDMuMjE0IDIuODM4LjMyMy4zNC42MjIuNzc4IDEuMDM0IDEuMzg2LjExLjE2LjI2NC4zODYuNDE1LjYwMWw5LjE3OSAxLjU1NGEzLjYyMyAzLjYyMyAwIDAgMSAyLjM1IDUuNjczbC02LjIxNCA4Ljc1OGMuMTE5LjYzNC4yOTkgMS40MzYuMzg2IDEuODE4LjEyLjU0LjIwOS45NjEuMjM0IDEuMTQyLjAxMS4wNzQuMDIuMTQ3LjAyNS4yMjJhNjUuODA1IDY1LjgwNSAwIDAgMS0uMDgxIDExLjg4Yy0xLjA4NSAxMS40ODYtNS44MDkgMjEuNTc5LTEyLjk1NSAyNy42NzgtNy4zOTkgNi4zMi0xNy41ODMgOS44MDEtMjguNjcxIDkuODAxek0xMi44NzQgNDcuNjg2YTMzLjQ1NiAzMy40NTYgMCAwIDAgMi4yNjcgOC4xNzJjMy4xODYgNy40MzYgOS4wNjYgMTMuMTM0IDE2LjU1MiAxNi4wMjMgNC41NzEgMS43NzIgOS43NDQgMi43MDcgMTQuOTY4IDIuNzA3IDkuMjI4IDAgMTcuOTYyLTIuOTM5IDIzLjk2NC04LjA2NCA1LjcyOC00Ljg4NyA5LjUzNC0xMy4yMTggMTAuNDQ3LTIyLjg1OS4zMzctMy40MzUuMzY1LTYuOTMzLjA4NS0xMC40MTQtLjAyMi0uMTA1LS4wNjgtLjMwNS0uMTIyLS41NC0uNjkzLTMuMDgyLTEuMTEyLTQuOTQyLjA1Ni02LjU5NWwzLjU5My01LjA2Mi00LjY2MS0uNzg5Yy0xLjg1Ni0uMjkyLTIuODU5LTEuNzY0LTQuMDIxLTMuNDY4LS4xNTktLjIzMy0uMy0uNDQ3LS40MTEtLjU5My0uNzE0LS43NjEtMS4zNDgtMS4zMjMtMS45NjItMS43NDQtMS4yNDctLjg2Ni0yLjgwMS0xLjQ3My00LjYzNy0xLjgxNy00LjAwMy0uNzQ0LTguNzg5LS4zMzQtMTMuMTQ5IDEuMTIyLTcuMzU0IDIuNDYtOS4zNjEgOC40MDItOS43NDkgMTIuOTU0LS4yMSAyLjQxNi0uMjE5IDUuMDEtLjAyNCA3LjkyOWwuNTE4IDMuNTU3YTMuNjI1IDMuNjI1IDAgMCAxLTEuNzc1IDMuNjYxYy0xLjIyNS43MDctMi43MDkgMS4wNjYtNC40MTIgMS4wNjYtNC42NjYgMC0xMS4wNDUtMi44NDctMTUuNTc5LTUuMjM4LjY5NyAyLjk3IDIuMTM1IDYuMTM2IDMuMDkyIDcuODA4YTMuNjI3IDMuNjI3IDAgMCAxLTIuODk5IDUuNDI0Yy0zLjQwOC4yMjQtOC4zMDItMS41MTktMTIuMTQxLTMuMjR6Ij48L3BhdGg+PC9nPjwvc3dpdGNoPjwvZz48IS0tLS0+PC9zdmc+Cg==");
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0.7);
+          }
+        }
+      </style>
+      <div class="loadBox"></div>
+    </div>
   </body>
 </html>
